@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number Facts Generator</h1>
+    <p>Uses the <a href="http://numbersapi.com/)">Number API</a> to get facts about numbers</p>
+    <div class="section" id="favorite-number-generator">
+        <h2>Favorite Number Fact Generator</h1>
+        <div>
+            <label for="favorite-number">Favorite Number</label>
+            <input type="number" id="favorite-number">
+            <button id="btn-get-fact">Get Facts!</button>
+        </div>
+        <div id="favorite-number-fact">
+        </div>
+    </div>
+    <div class="section" id="multiple-number-request">
+        <h2>Multiple Number Request</h2>
+        <div id="form">
+            <div>
+                <label>Number</label>
+                <input type="number" class="number">
+            </div>
+        </div>
+        <button id="batch-request">Get Info</button>
+        <button id="add-request-info">Add More Numbers</button>
+        <div id="multiple-info">
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="number-facts.js"></script>
+</body>
+</html>
