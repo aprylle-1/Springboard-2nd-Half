@@ -1,0 +1,8 @@
+.Board {
+    margin: 0 auto;
+  }
+
+.Board-disabled{
+    pointer-events: none;
+    margin: auto;
+}
