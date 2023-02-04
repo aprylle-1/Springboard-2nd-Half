@@ -24,7 +24,7 @@ function TodoList () {
             <NewTodoForm addTodo={addTodo}/>
             <div>
                 {todoList.map((todo,idx)=>{
-                    return <li key={todo.key} data-id={idx}>{todo.task} <button onClick={deleteTodo}>X</button></li>
+                    return <li className ="todo-item" key={todo.key} data-id={idx}>{todo.task} <button onClick={deleteTodo}>X</button></li>
                 })}
             </div>
         </div>

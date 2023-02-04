@@ -1,6 +1,8 @@
 import { useState } from "react";
 import NewBoxForm from "./NewBoxForm";
 import Box from "./Box"
+import { v4 } from 'uuid';
+
 function BoxList () {
 
     const sampleBoxList = [
@@ -23,20 +25,21 @@ function BoxList () {
     }
 
     function deleteBox (deleteIdx) {
-        setBoxList(boxList.filter((box, idx) => {
-            return idx !== deleteIdx
+        setBoxList(boxList.filter((box, idx)=>{
+            return idx !== parseInt(deleteIdx);
         }))
     }
 
     return (
         <div className="boxList">
         <NewBoxForm createBox={createBox}/>   
-        {boxList.map((box, idx) => <><Box 
+        {boxList.map((box, idx) => <Box
+        key={v4()}
         deleteBox={deleteBox}
         idx = {idx}
         backgroundColor={box.backgroundColor} 
         height={box.height} 
-        width={box.width}/></>)}
+        width={box.width}/>)}
         </div>
     )
 }

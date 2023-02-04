@@ -20,7 +20,6 @@ function NewBoxForm ({createBox}) {
 
     function onSubmit (e){
         e.preventDefault()
-        console.log(formData)
         createBox(formData)
     }
     
