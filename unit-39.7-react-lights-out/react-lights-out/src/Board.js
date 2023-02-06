@@ -28,10 +28,10 @@ import "./Board.css";
  **/
 
 function Board({ nrows, ncols, chanceLightStartsOn }) {
-  const [board, setBoard] = useState(createBoard());
+  const [board, setBoard] = useState(createBoard(nrows, ncols, chanceLightStartsOn));
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
-  function createBoard() {
+  function createBoard(nrows, ncols, chanceLightStartsOn) {
     let initialBoard = [];
     for (let y = 0; y < nrows ; y ++){
         let currRow = []
@@ -88,6 +88,10 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
     });
   }
 
+  function newGame() {
+    setBoard(createBoard(nrows, ncols, 0.5))
+  }
+
   // if the game is won, just show a winning msg & render nothing else
 
   // TODO
@@ -108,6 +112,7 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
                     })}
                 </tbody>
             </table>
+            <button onClick={newGame}>New Game</button>
         </div>
     )
     }
@@ -123,6 +128,7 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
         })}
         </tbody>
     </table>
+    <button onClick={newGame}>New Game</button>
     </>
     )
 }
