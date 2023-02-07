@@ -1,0 +1,9 @@
+.Americano {
+    background-color: antiquewhite;
+    font-size: 2rem;
+    height: 100vh;
+}
+.Americano img{
+    margin-top: 30px;
+    height: 30vh;
+}

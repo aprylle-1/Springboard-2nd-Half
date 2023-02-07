@@ -1,0 +1,28 @@
+.VendingMachine {
+    height: 100vh;
+    background-color: bisque;
+    margin-top: -25px;
+}
+
+.VendingMachine img {
+    border-radius: 10px;
+}
+
+.VendingMachine-Menu {
+    margin: auto;
+    background-color: white;
+    width: 20%;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.VendingMachine-Nav {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.VendingMachine-Nav:hover{
+    font-size: 1.5rem;
+    background-color: grey;
+    color: black;
+}
