@@ -1,0 +1,20 @@
+.Color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height : 100vh;
+    color :grey;
+    margin : -30px;   
+}
+
+.Color-header{
+    background-color: white;
+    color: black;
+    width: 70%;
+}
+
+.Color-link {
+    width: 30%;
+    font-size: 20px;
+}

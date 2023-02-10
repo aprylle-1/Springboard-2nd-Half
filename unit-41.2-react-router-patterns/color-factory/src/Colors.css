@@ -1,0 +1,11 @@
+.Colors ul {
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    width: 30%;
+}
+
+.Colors li:hover {
+    background-color: grey;
+    color: white;
+}
