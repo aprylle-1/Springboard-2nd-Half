@@ -1,0 +1,25 @@
+.Search{
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 150%;
+    font-family: 'Work Sans', sans-serif;
+}
+.Search input{
+    padding: 4px;
+    border-color: transparent;
+    width: 70%;
+    margin-right: 5px;
+}
+
+.Search button{
+    padding: 4px;
+    width: 20%;
+    border-color: transparent;
+}
+
+.Search button:hover{
+    transition-duration: 10ms;
+    background-color: cadetblue;
+    color: white;
+    
+}

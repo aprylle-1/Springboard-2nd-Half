@@ -1,0 +1,32 @@
+.Job{
+    border: grey 1px solid;
+    width: 30%;
+    height: 26vh;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.Job button {
+    padding: 5px;
+    font-size: 1.2rem;
+    border-color: transparent;
+    width: 30%;
+    box-shadow: 1px 1px 1px gray;
+}
+
+.Job button:hover{
+    box-shadow: 1px 1px 1px grey inset;
+    background-color: lightcyan;
+    border-color: transparent;
+}
+
+.pagination-button{
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
+}
