@@ -13,7 +13,12 @@ function useUpdateForm (initialValue) {
             }
         })
     }
-    return {form, onChange}
+
+    function clear (e) {
+        e.preventDefault()
+        setForm(initialValue)
+    }
+    return {form, onChange, clear, setForm}
 }
 
 export default useUpdateForm

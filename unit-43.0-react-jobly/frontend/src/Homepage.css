@@ -1,0 +1,32 @@
+.Homepage {
+    background: rgb(63,94,251);
+    background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(84,40,128,1) 40%, rgba(252,70,107,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(84,40,128,1) 40%, rgba(252,70,107,1) 100%);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(84,40,128,1) 40%, rgba(252,70,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
+    height: 93.7vh;
+    display: flex;
+}
+
+.Homepage-content{
+    padding: 50px 0px 50px 0px !important;
+    margin-top: 50px;
+    margin: auto;
+    width: 40%;
+    border-radius: 5px;
+    color: white;
+}
+
+.Homepage-content div {
+    margin: 10px
+}
+
+.Homepage-content h1 h2 {
+    margin: 10px;
+}
+
+.Homepage-btn{
+    width: 30% !important;
+    margin: 5px;
+    color: white;
+}

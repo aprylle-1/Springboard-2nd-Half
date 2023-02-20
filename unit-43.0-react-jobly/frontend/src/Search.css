@@ -5,16 +5,19 @@
     font-family: 'Work Sans', sans-serif;
 }
 .Search input{
-    padding: 4px;
+    padding: 4px !important;
     border-color: transparent;
     width: 70%;
     margin-right: 5px;
+    height: 50% !important;
+    font-size: 1rem !important;
 }
 
 .Search button{
-    padding: 4px;
+    padding: 2px;
     width: 20%;
     border-color: transparent;
+    font-size: 1rem !important;
 }
 
 .Search button:hover{

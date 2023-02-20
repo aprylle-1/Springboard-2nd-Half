@@ -18,3 +18,12 @@
     margin-right: 20px;
     margin-top: 10px;
 }
+
+.Navbar-logout{
+    background-color: white;
+    border: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+}

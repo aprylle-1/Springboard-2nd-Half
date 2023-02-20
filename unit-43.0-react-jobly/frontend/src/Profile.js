@@ -1,49 +1,71 @@
-import useUpdateForm from "./hooks/useForm";
-import "./SignUpForm.css"
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-function SignUpForm ({register, currentUser}) {
-
-
+import useUpdateForm from "./hooks/useForm";
+import { useEffect } from "react";
+import { useState } from "react";
+import "./Profile.css"
+function Profile ({currentUser, update}) {
+    const navigate = useNavigate()
     const initialValue = {
         firstName : "",
         lastName : "",
-        password : "",
         email : "",
         username : ""
     }
-
-    const {form, onChange, clear} = useUpdateForm(initialValue)
-    async function registerNewUser (e) {
-        e.preventDefault()
-        await register(form)
-    }
-    
-    const navigate = useNavigate()
+    const {form, onChange, setForm} = useUpdateForm(initialValue)
+    const [updated, setUpdate] = useState(false)
     useEffect(()=>{
-        if(currentUser){
+        setUpdate(false)
+        if (!currentUser){
             navigate("/")
         }
+        else{
+            setForm({
+                firstName : currentUser.firstName,
+                lastName : currentUser.lastName,
+                email : currentUser.email,
+                username : currentUser.username
+            })
+        }
     },[])
+
+    async function updateInfo (e) {
+        try{
+            e.preventDefault()
+            const currentChanges = {
+                ...form
+            }
+            delete currentChanges.username
+            await update(form.username, currentChanges)
+            setUpdate(true)
+        }
+        catch (thrownErrors){
+            console.log(thrownErrors)
+        }
+    }
     return (
-        <div className="SignUpForm">
-        <form onSubmit={registerNewUser}>
-            <h2>Sign Up</h2>
+        <div className="Profile">
+        <form onSubmit={updateInfo}>
+            <h2>Edit Profile</h2>
+            {updated && 
+            <div className="alert alert-success">Updated successfully.</div>
+            }
             <div>
                 <label htmlFor="username" className="form-label">Username</label>
                 <input
                 className="form-control"
+                disabled
                 type="text"
                 name="username"
                 id="username"
                 value={form.username}
                 onChange={onChange}
                 placeholder="username"
-            />
+                />
             </div>
             <div>
-                <label htmlFor="firstName" className="form-label">Email</label>
+                <label htmlFor="email" className="form-label">Email</label>
                 <input
+                required
                 className="form-control"
                 type="email"
                 name="email"
@@ -56,6 +78,7 @@ function SignUpForm ({register, currentUser}) {
             <div>
                 <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
+                required
                 className="form-control"
                 type="text"
                 name="firstName"
@@ -68,6 +91,7 @@ function SignUpForm ({register, currentUser}) {
             <div>
                 <label htmlFor="lastName" className="form-label">Last Name</label>
                 <input
+                required
                 className="form-control"
                 type="text"
                 name="lastName"
@@ -78,24 +102,11 @@ function SignUpForm ({register, currentUser}) {
             />
             </div>
             <div>
-                <label htmlFor="password" className="form-label">Password</label>
-                <input
-                className="form-control"
-                type="password"
-                name="password"
-                id="password"
-                value={form.password}
-                onChange={onChange}
-                placeholder="password"
-                />
-            </div>
-            <div className="buttons">
-                <button className="btn btn-primary">Signup</button>
-                <button className="btn btn-outline-secondary" onClick={clear}>Clear</button>
+                <button className="btn btn-primary">Update</button>
             </div>
         </form>
         </div>
     )
 }
 
-export default SignUpForm;
+export default Profile
